@@ -1,6 +1,6 @@
 # Nederburg theme for hugo
 
-Nederburg is an elegant, responsive theme. 
+Nederburg is a fast and secure theme. 
 
 This Hugo theme was ported from [competethemes](https://www.competethemes.com/tracks/). 
 
