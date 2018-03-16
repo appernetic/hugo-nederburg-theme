@@ -1,0 +1,23 @@
+{{ define "body" }}
+
+<body class="page-template-default page ct-body singular singular-page not-front standard">
+{{ end }}
+  {{ define "main" }}
+  <div id="main" class="main" role="main">
+
+  	<div id="loop-container" class="loop-container">
+  		<div class="entry">
+  		<div class="entry-header">
+  		<h1 class="entry-title">{{ .Title }}</h1>
+  	</div>
+  	<div class="entry-container">
+  		<div class="entry-content">
+  			<article>
+   {{ .Content }}
+        </article>
+  		</div>
+  			</div>
+  </div>	</div>
+
+  </div>
+  {{ end }}

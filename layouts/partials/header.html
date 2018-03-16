@@ -1,0 +1,36 @@
+<div id="title-info" class="title-info">
+  <div id='site-title' class='site-title'>
+    {{ with .Site.Title }}
+    <a href="/"> {{ . }} </a>
+    {{ end }}</div>
+  </div>
+  <button id="toggle-navigation" class="toggle-navigation">
+    <i class="fa fa-bars"></i>
+  </button>
+
+  <div id="menu-primary-tracks" class="menu-primary-tracks"></div>
+  <div id="menu-primary" class="menu-container menu-primary" role="navigation">
+    {{ with .Site.Params.Slogan }}
+    <p class="site-description">{{ . | safeHTML }}</p>
+    {{ end }}
+
+    <div class="menu">
+      <ul id="menu-primary-items" class="menu-primary-items">
+        <li id="menu-item" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item">
+          <a href="/">Home</a>
+        </li>
+
+        {{ range $name, $taxonomy := .Site.Params.Navlinks }}
+        {{ if ne $taxonomy.name "Home" }}
+        <li id="menu-item" class="menu-item menu-item-type-post_type menu-item-object-page menu-item">
+          <a href="/{{ $taxonomy.url | urlize }}">{{ $taxonomy.name }}</a>
+        </li>
+        {{ end }}
+        {{ end }}
+      </ul>
+
+
+
+    </div>
+
+  </div>
