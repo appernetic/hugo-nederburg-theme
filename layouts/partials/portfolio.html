@@ -1,6 +1,8 @@
 <h1 class="screen-reader-text">Posts</h1>
+
 <div id="loop-container" class="loop-container">
-	{{ range $index, $element := (where .Data.Pages "Section" "post") }}
+	{{ $paginator := .Paginate (where (where .Site.Pages "Type" "post") "IsPage" true) }}
+	{{ range $index, $element := .Paginator.Pages }}
 	{{ if and (isset .Params "image") .Params.image }}
 	{{ if eq (mod $index 2) 0 }}
 	<div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-memories tag-normal-post tag-standard-2 excerpt zoom full-without-featured odd excerpt">
@@ -33,26 +35,26 @@
 						</span>
 						{{ end }}
 
-						 {{ range .Params.categories }}
-							<span> / </span>
+						{{ range .Params.categories }}
+						<span> / </span>
 						<span class="category">
 							<a href="/categories{{ . | relURL }}">{{ . }}</a>
 						</span>
 						{{ end }}
 					</div>
-							<div class='excerpt-header'>
-								<h2 class='excerpt-title'>
-									<a href="{{ .Permalink }} "> {{ .Title }} </a>
-								</h2>
-							</div>
-							<div class='excerpt-content'>
-								<article>
-									{{ .Summary }}
-
-									<div class="more-link-wrapper"><a class="more-link" href="{{ .Permalink }}">Read the post<span class="screen-reader-text">This is a Standard Post</span></a></div>
-								</article>
-							</div>
-						</div>
+					<div class='excerpt-header'>
+						<h2 class='excerpt-title'>
+							<a href="{{ .Permalink }} "> {{ .Title }} </a>
+						</h2>
 					</div>
-					{{ end }}
+					<div class='excerpt-content'>
+						<article>
+							{{ .Summary }}
+
+							<div class="more-link-wrapper"><a class="more-link" href="{{ .Permalink }}">Read the post<span class="screen-reader-text">This is a Standard Post</span></a></div>
+						</article>
+					</div>
 				</div>
+			</div>
+			{{ end }}
+		</div>
