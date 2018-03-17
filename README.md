@@ -1,8 +1,8 @@
 # Nederburg theme for hugo
 
-Nederburg is a fast and secure theme. 
+Nederburg is a fast and secure theme.
 
-This Hugo theme was ported from [competethemes](https://www.competethemes.com/tracks/). 
+This Hugo theme was ported from [competethemes](https://www.competethemes.com/tracks/).
 
 ![screenshot](https://raw.githubusercontent.com/appernetic/hugo-nederburg-theme/master/images/screenshot.png)
 
@@ -25,9 +25,9 @@ After installing the Nederburg theme successfully, we recommend you to take a lo
 First, let's take a look at the [config.toml](https://github.com/appernetic/hugo-nederburg-theme/tree/master/exampleSite/config.toml). It will be useful to learn how to customize your site. Feel free to play around with the settings.
 
 ### Gravatar
- 
+
 To have an image in your author bio shown after posts, go to [Gravatar](https://gravatar.com/) and configure it and then add the email address that you have associated with it in the email section in settings:
-	
+
 ```toml
 email = "your@gravatar.email"
 ```
@@ -84,7 +84,7 @@ Now enter [`localhost:1313`](http://localhost:1313) in the address bar of your b
 ## Things to do and not (yet) implemented
 
  - Add the possibility for a description for each category.
- - Add pagination to the front page.
+ - ~~Add pagination to the front page.~~
  - Add dropdown menu option to the left sub menu.
  - Add previous next pagination in blog post.
  - Add a search function.
