@@ -101,6 +101,15 @@ Have you found a bug or got an idea for a new feature? Feel free to use the [iss
 
 This port is released under the MIT License.
 
+
 ## Thanks
 
 Thanks to [Steve Francia](https://github.com/spf13) for creating Hugo and the awesome community around the project. And also thanks to [competethemes](https://www.competethemes.com/tracks/) for creating this awesome theme.
+
+## Sponsors
+
+List of all the great people and organisations that help us fund this open source work.
+
+If you want to help support check out my Patreon @ https://www.patreon.com/appernetic
+
+[Timothy D. Swieter](https://github.com/Swieter) 
