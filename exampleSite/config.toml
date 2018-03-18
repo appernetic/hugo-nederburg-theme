@@ -3,9 +3,11 @@ title = "Nederburg"
 theme = "hugo-nederburg-theme"
 languageCode = "en-us"
 # Enable comments by entering your Disqus shortname
-disqusShortname = "appernetic"
+disqusShortname = ""
 # Enable Google Analytics by entering your tracking code
 googleAnalytics = ""
+preserveTaxonomyNames = true
+paginate = 5 #frontpage pagination
 
 [params]
   slogan = "A fast &amp; secure theme"
