@@ -1,10 +1,10 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-{{ with .Title }} <title>{{ . }} {{if $.IsHome}}- {{ $.Site.Params.slogan | safeHTML }}{{ end }}</title>
+{{ with .Title }} <title>{{ . }} {{if $.IsHome}}- {{ $.Site.Params.slogan | default "" | safeHTML }}{{ end }}</title>
 {{ end }}
 
 {{ with .Site.Params.description }}
-<meta name="description" content="{{ . }}">
+<meta name="description" content="{{ . | default "" }}">
 {{ end }}
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,7 +19,7 @@
 <link rel="shortcut icon" href="{{ "img/favicon.ico" | absURL }}" type="image/x-icon">
 <link rel="icon" href="{{ "img/favicon.ico" | absURL }}" type="image/x-icon">
 {{ if .RSSLink }}
-<link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-<link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
+<link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title | default "" }}" />
+<link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title | default "" }}" />
 {{ end }}
 {{ template "_internal/google_analytics_async.html" . }}

@@ -30,9 +30,9 @@
 
 						<span class="author">
 							{{ if and (isset .Site.Params "authorlink") .Site.Params.authorLink }}
-							<a href="{{ .Site.Params.authorLink | absURL }}" title="Posts by {{ .Site.Params.author }}" rel="author">{{ .Site.Params.author }}</a>
+							<a href="{{ .Site.Params.authorLink | default "" | absURL }}" title="Posts by {{ .Site.Params.author | default "" }}" rel="author">{{ .Site.Params.author | default "" }}</a>
 							{{ else }}
-							{{ .Site.Params.author }}
+							{{ .Site.Params.author | default "" }}
 							{{ end }}
 						</span>
 						{{ end }}

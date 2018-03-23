@@ -11,7 +11,7 @@
   <div id="menu-primary-tracks" class="menu-primary-tracks"></div>
   <div id="menu-primary" class="menu-container menu-primary" role="navigation">
     {{ with .Site.Params.Slogan }}
-    <p class="site-description">{{ . | safeHTML }}</p>
+    <p class="site-description">{{ . | default "" | safeHTML }}</p>
     {{ end }}
 
     <div class="menu">

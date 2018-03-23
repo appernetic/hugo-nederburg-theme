@@ -4,9 +4,9 @@
     <a href=""> {{ . }} </a>
     {{ end }}
 	</h1>
-		
+
 			{{ with .Site.Params.Slogan }}
-			<p class="site-description">{{ . | safeHTML }}</p>
+			<p class="site-description">{{ . | default "" | safeHTML }}</p>
 			{{ end }}
 
 		<div id="menu-footer" class="menu-container menu-footer" role="navigation">

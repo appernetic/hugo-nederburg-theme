@@ -21,9 +21,9 @@
 
   <span class="author">
     {{ if and (isset .Site.Params "authorlink") .Site.Params.authorLink }}
-    <a href="{{ .Site.Params.authorLink  | absURL}}" title="Posts by {{ .Site.Params.author }}" rel="author">{{ .Site.Params.author }}</a>
+    <a href="{{ .Site.Params.authorLink | default "" | absURL}}" title="Posts by {{ .Site.Params.author | default "" }}" rel="author">{{ .Site.Params.author | default ""}}</a>
     {{ else }}
-    {{ .Site.Params.author }}
+    {{ .Site.Params.author | default "" }}
     {{ end }}
   </span>
 
@@ -80,14 +80,14 @@
 <div class="author-meta">
 
 <div class="author">
-  <img alt='{{ .Site.Params.author }}' src="https://www.gravatar.com/avatar/{{ md5  .Site.Params.email }}?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
+  <img alt='{{ .Site.Params.author | default "" }}' src="https://www.gravatar.com/avatar/{{ md5  .Site.Params.email | default "" }}?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
 
 	<span>
-  Written by:<a href="{{ .Site.Params.authorLink | absURL}}" title="Posts by {{ .Site.Params.author }}" rel="author">{{ .Site.Params.author }}</a>        </span>
+  Written by:<a href="{{ .Site.Params.authorLink | default "" | absURL}}" title="Posts by {{ .Site.Params.author | default "" }}" rel="author">{{ .Site.Params.author | default "" }}</a>        </span>
 </div>
 <div class="bio">
   {{ range .Site.Params.bio }}
-    <p>{{ . | safeHTML }}</p>
+    <p>{{ . | default "" | safeHTML }}</p>
   {{ end }}
 
 
