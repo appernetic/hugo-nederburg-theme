@@ -1,7 +1,7 @@
 <div id="title-info" class="title-info">
   <div id='site-title' class='site-title'>
-    {{ with .Site.Title }}
-    <a href="/"> {{ . }} </a>
+    {{ if ( ne .Site.Title "" ) }}
+    <a href="{{ .Site.BaseURL | relLangURL }}"> {{ .Site.Title }} </a>
     {{ end }}</div>
   </div>
   <button id="toggle-navigation" class="toggle-navigation">
