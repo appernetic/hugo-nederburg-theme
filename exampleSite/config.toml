@@ -12,11 +12,15 @@ paginate = 5 #frontpage pagination
 [params]
   slogan = "A fast &amp; secure theme"
   description = "Describe your website" # meta description
-  copyright = "&copy;2018 Göran Svensson"
   author = "Göran Svensson"
   authorLink = "https://appernetic.io/"
   bio = [
     "Göran is an avid blogger and the founder of <a href='https://appernetic.io/'>Appernetic.io</a>. This is the author bio shown after posts."
+  ]
+  copyright = [
+    "&copy; 2018 Göran Svensson",
+    "Nederburg Hugo Theme by [Appernetic](https://appernetic.io).",
+    "A port of Tracks by Compete Themes."
   ]
 
 

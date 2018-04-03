@@ -98,7 +98,15 @@
         </li>
         {{end}}
 				</ul>	<div class="design-credit">
+		{{ range .Site.Params.copyright }}
+		<p>{{ . | markdownify }}</p>
+		{{ else }}
 		<p>
-			Nederburg Hugo Theme by <a target="_blank" href="https://appernetic.io">Appernetic</a>.</p><p>A port of Tracks by Compete Themes.</p>
+			Nederburg Hugo Theme by <a target="_blank" href="https://appernetic.io">Appernetic</a>.
+		</p>
+		<p>
+			A port of Tracks by Compete Themes.
+		</p>
+		{{ end }}
 	</div>
 </footer>
