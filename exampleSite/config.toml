@@ -39,17 +39,20 @@ paginate = 5 #frontpage pagination
   email = "goran@molnsys.com"
 
   # Nav links in the side bar
-  [[params.navlinks]]
+  [[menu.main]]
   name = "Home"
-  url = ""
+  url = "/"
+  weight = 1
 
-  [[params.navlinks]]
+  [[menu.main]]
   name = "About"
   url = "about/"
+  weight = 2
 
-  [[params.navlinks]]
+  [[menu.main]]
   name = "Get in touch"
   url = "contact/"
+  weight = 3
 
   [params.social]
   facebook      = "full profile url in facebook"

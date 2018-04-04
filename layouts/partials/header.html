@@ -16,21 +16,13 @@
 
     <div class="menu">
       <ul id="menu-primary-items" class="menu-primary-items">
-        <li id="menu-item" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item">
-          <a href="/">Home</a>
+        {{ $page := . }}
+        {{ range .Site.Menus.main }}
+        <li id="menu-item" class='menu-item {{ if eq ("/") (.URL) }}menu-item-type-custom menu-item-object-custom{{ else }}menu-item-type-post_type menu-item-object-page{{ end }} {{ if $page.IsMenuCurrent "main" . }}current-menu-item current_page_item{{ end }}'>
+          <a href="{{ .URL | absURL }}">{{ .Name }}</a>
         </li>
-
-        {{ range $name, $taxonomy := .Site.Params.Navlinks }}
-        {{ if ne $taxonomy.name "Home" }}
-        <li id="menu-item" class="menu-item menu-item-type-post_type menu-item-object-page menu-item">
-          <a href="/{{ $taxonomy.url | urlize }}">{{ $taxonomy.name }}</a>
-        </li>
-        {{ end }}
         {{ end }}
       </ul>
-
-
-
     </div>
 
   </div>
