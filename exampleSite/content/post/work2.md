@@ -6,6 +6,7 @@ image = "img/portfolio/logs1.jpg"
 showonlyimage = false
 categories = [ "Design"]
 weight = 1
+description = "Individual meta description for this post"
 +++
 
 This is what an ordinary post looks like, and you’re reading a custom excerpt right now. Have fun looking around the theme, and don’t forget to check it out on your phone!

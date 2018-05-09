@@ -17,7 +17,7 @@
 
         {{ end }}
         <div class="entry-meta">
-          <span class="date">{{ .Date.Format "January 02" }}</span>	<span> / </span>
+          <span class="date">{{ .Date.Format "02 January" }}</span>	<span> / </span>
 
           <span class="author">
             {{ if and (isset .Site.Params "authorlink") .Site.Params.authorLink }}
@@ -155,6 +155,17 @@ href="{{ . }}">
 title="github icon"></i>
 </a>
 {{end}}
+
+
+{{ with .Site.Params.social.pinterest }}
+<a class="pinterest" target="_blank"
+href="{{ . }}">
+<i class="fa fa-pinterest"
+title="pinterest icon"></i>
+</a>
+{{end}}
+
+
 
 </div>
 </div>

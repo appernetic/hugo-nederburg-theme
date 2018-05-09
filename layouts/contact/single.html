@@ -20,23 +20,23 @@
       {{ with .Site.Params.email }}
   			<form method="post" action="https://formspree.io/{{ . }}">
   				<fieldset class="scf-name">
-  					<label for="scf_name">Name (Required)</label>
-  					<input name="scf_name" id="scf_name" type="text" size="33" maxlength="99" value="" placeholder="Your Name">
+  					<label for="scf_name">Seu Nome</label>
+  					<input name="scf_name" id="scf_name" type="text" size="33" maxlength="99" value="" placeholder="Nome completo">
   				</fieldset>
   				<fieldset class="scf-email">
-  					<label for="scf_email">Email (Required)</label>
-  					<input name="scf_email" id="scf_email" type="text" size="33" maxlength="99" value="" placeholder="Your Email">
+  					<label for="scf_email">E-mail para resposta</label>
+  					<input name="scf_email" id="scf_email" type="text" size="33" maxlength="99" value="" placeholder="Endereço de email para resposta">
   				</fieldset>
   				<fieldset class="scf-response">
-  					<label for="scf_response">1 + 1 =</label>
-  					<input name="scf_response" id="scf_response" type="text" size="33" maxlength="99" value="" placeholder="Correct Response">
+  					<label for="scf_response">Sou um humano e sei quanto é 1 + 1 =</label>
+  					<input name="scf_response" id="scf_response" type="text" size="33" maxlength="99" value="" placeholder="Quanto é 1 +1?">
   				</fieldset>
   				<fieldset class="scf-message">
-  					<label for="scf_message">Message (Required)</label>
-  					<textarea name="scf_message" id="scf_message" cols="33" rows="7" placeholder="Your Message"></textarea>
+  					<label for="scf_message">Sua mensagem</label>
+  					<textarea name="scf_message" id="scf_message" cols="33" rows="7" placeholder="Mensagem"></textarea>
   				</fieldset>
   				<div class="scf-submit">
-  					<input type="submit" id="scf-button" value="Send email">
+  					<input type="submit" id="scf-button" value="Enviar">
   					<input type="hidden" id="scf-key" name="scf-key" value="process">
   					<input type="hidden" id="scf-nonce" name="scf-nonce" value="52582b0798">
   				</div>

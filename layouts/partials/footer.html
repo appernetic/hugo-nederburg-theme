@@ -97,6 +97,17 @@
         </a>
         </li>
         {{end}}
+
+
+        {{ with .Site.Params.social.pinterest }}
+        <li>
+        <a href="{{ . }}"  class="pinterest" target="_blank">
+            <i class="fa fa-pinterest" title="pinterest"></i>
+            <span class="screen-reader-text">pinterest</span>
+        </a>
+        </li>
+        {{end}}
+
 				</ul>	<div class="design-credit">
 		{{ range .Site.Params.copyright }}
 		<p>{{ . | markdownify }}</p>

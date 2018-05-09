@@ -95,4 +95,15 @@
     </li>
     {{end}}
 
+
+    {{ with .Site.Params.social.pinterest }}
+    <li>
+      <a href="{{ . }}" data-animate-hover="pulse" class="pinterest" target="_blank">
+        <i class="fa fa-pinterest" title="pinterest"></i>
+        <span class="screen-reader-text">pinterest</span>
+      </a>
+    </li>
+    {{end}}
+
+
   </ul></div>

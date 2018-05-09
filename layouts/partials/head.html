@@ -1,11 +1,14 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+{{ partial "schema" . }}
+
 {{ with .Title }} <title>{{ . }} {{if $.IsHome}}- {{ $.Site.Params.slogan | default "" | safeHTML }}{{ end }}</title>
 {{ end }}
 
-{{ with .Site.Params.description }}
-<meta name="description" content="{{ . | default "" }}">
+{{ if .Description }}<meta name="description" content="{{ .Description }}" />
+{{ else }}<meta name="description" content="{{ .Site.Params.description }}" />
 {{ end }}
+
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="all,follow">
