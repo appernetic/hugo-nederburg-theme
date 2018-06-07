@@ -105,5 +105,14 @@
     </li>
     {{end}}
 
+    {{ if .Site.Params.social.rss }}
+    <li>
+      <a href="{{ .Site.RSSLink }}" data-animate-hover="pulse" class="rss" target="_blank">
+        <i class="fa fa-rss" title="rss"></i>
+        <span class="screen-reader-text">rss</span>
+      </a>
+    </li>
+    {{end}}
+
 
   </ul></div>
