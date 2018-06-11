@@ -1,5 +1,13 @@
 <div class="archive-header">
-	<h1>Category: {{ .Title }}</h1>
+	<h1>
+		Category: {{ .Title }} 
+		{{ if .Site.Params.social.rss }}
+		<a href="{{ .RSSLink }}" data-animate-hover="pulse" class="in-page-rss" target="_blank">
+            <i class="fa fa-rss" title="rss"></i>
+            <span class="screen-reader-text">rss</span>
+		</a>
+		{{ end }}
+	</h1>
 </div>
 
 <h1 class="screen-reader-text">Posts</h1>

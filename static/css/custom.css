@@ -2224,6 +2224,21 @@ li.pingback:first-child {
     margin-right: 0px !important;
   }
 }
+
+/**
+ * RSS Feed button on Categories & Tags
+ */
+.in-page-rss {
+   color: white !important;
+   opacity: 0.4;
+}
+
+.in-page-rss:hover {
+  color: white !important;
+  opacity: 1;
+}
+
+
 /**
  * 14.2 Galleries
  */
