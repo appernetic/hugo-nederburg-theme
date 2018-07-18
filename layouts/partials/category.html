@@ -1,6 +1,6 @@
 <div class="archive-header">
 	<h1>
-		Category: {{ .Title }} 
+		Category: {{ .Title }}
 		{{ if .Site.Params.social.rss }}
 		<a href="{{ .RSSLink }}" data-animate-hover="pulse" class="in-page-rss" target="_blank">
             <i class="fa fa-rss" title="rss"></i>
@@ -13,22 +13,19 @@
 <h1 class="screen-reader-text">Posts</h1>
 <div id="loop-container" class="loop-container">
   {{ range $index, $element := (where .Data.Pages "Section" "post") }}
-	{{ if and (isset .Params "image") .Params.image }}
-	{{ if eq (mod $index 2) 0 }}
-	<div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-memories tag-normal-post tag-standard-2 excerpt zoom full-without-featured odd excerpt">
-		{{ else }}
-		<div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-memories tag-normal-post tag-standard-2 excerpt zoom full-without-featured even excerpt">
-			{{ end }}
+		{{ if and (isset .Params "image") .Params.image }}
+			{{ if eq (mod $index 2) 0 }}
+				<div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-memories tag-normal-post tag-standard-2 excerpt zoom full-without-featured odd excerpt">
 			{{ else }}
-
+				<div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-memories tag-normal-post tag-standard-2 excerpt zoom full-without-featured even excerpt">
+			{{ end }}
+		{{ else }}
 			<div class="post type-post status-publish format-standard hentry category-standard category-travel excerpt zoom full-without-featured odd excerpt">
+		{{ end }}
 
-				{{ end }}
-
-				{{ if and (isset .Params "image") .Params.image }}
-				<a class="featured-image-link" href="{{ .Permalink }}"><div class='featured-image lazy lazy-bg-image'   data-background="{{ .Params.image | absURL }}"></div></a>
-
-				{{ end }}
+		{{ if and (isset .Params "image") .Params.image }}
+			<a class="featured-image-link" href="{{ .Permalink }}"><div class='featured-image lazy lazy-bg-image' data-background="{{ .Permalink }}{{ .Params.image }}"></div></a>
+		{{ end }}
 
 				<div class="excerpt-container">
 					<div class="excerpt-meta">
