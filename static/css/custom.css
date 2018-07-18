@@ -165,7 +165,7 @@ ol {
   padding: 0;
   margin: 1.5em;
 }
-ul ul, ul ol, 
+ul ul, ul ol,
 ol ul,
 ol ol {
   margin: 0 1.5em;
@@ -232,7 +232,7 @@ th {
 .alignleft,
 .aligncenter,
 .alignnone,
-.size-auto, 
+.size-auto,
 .size-full,
 .size-large,
 .size-medium,
@@ -281,6 +281,11 @@ img {
 }
 
 .singular-attachment img {
+  max-width: 100%;
+}
+
+article img {
+  max-height: 100%;
   max-width: 100%;
 }
 
@@ -2724,4 +2729,3 @@ li.pingback:first-child {
     width: 500px !important;
   }
 }
-
