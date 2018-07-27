@@ -16,7 +16,7 @@
 				{{ end }}
 
 				{{ if and (isset .Params "image") .Params.image }}
-				<a class="featured-image-link" href="{{ .Permalink }}"><div class='featured-image lazy lazy-bg-image'   data-background="{{ .Params.image | absURL }}"></div></a>
+				<a class="featured-image-link" href="{{ .Permalink }}"><div class='featured-image lazy lazy-bg-image'   data-background="{{ .Permalink }}{{ .Params.image }}"></div></a>
 
 				{{ end }}
 				<div class="excerpt-container">
