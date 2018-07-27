@@ -4,6 +4,7 @@ showonlyimage = true
 draft = false
 date = "2016-11-05T19:53:42+05:30"
 title = "A Totally Response Theme"
+writer = "Göran Svensson"
 categories = [ "photography" ]
 weight = 5
 +++

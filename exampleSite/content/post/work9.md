@@ -4,6 +4,7 @@ image = "img/portfolio/birds.jpg"
 showonlyimage = false
 date = "2016-11-05T20:02:19+05:30"
 title = "Blogging is Fun and Worthwhile"
+writer = "Göran Svensson"
 weight = 9
 +++
 
