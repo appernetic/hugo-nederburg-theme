@@ -1,10 +1,12 @@
 {{ define "body" }}
 
 <body class="post-template-default single single-post single-format-standard ct-body singular singular-post not-front standard">
-  {{ end }}
+{{ end }}
 
 
-  {{ define "main" }}
+{{ define "main" }}
+  {{ $has_writer := isset .Site.Params.writers (lower .Params.writer) }}
+  {{ $writer := index .Site.Params.writers (lower .Params.writer) | default dict }}
   <div id="loop-container" class="loop-container">
     {{ if and (isset .Params "image") .Params.image }}
     <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
@@ -20,10 +22,8 @@
           <span class="date">{{ .Date.Format "02 January" }}</span>	<span> / </span>
 
           <span class="author">
-            {{ if and (isset .Site.Params "authorlink") .Site.Params.authorLink }}
-            <a href="{{ .Site.Params.authorLink | default "" | absURL}}" title="Posts by {{ .Site.Params.author | default "" }}" rel="author">{{ .Site.Params.author | default ""}}</a>
-            {{ else }}
-            {{ .Site.Params.author | default "" }}
+            {{ if $has_writer }}
+            <a href="{{ $writer.link | default "" | absURL}}" title="Posts by {{ .Params.writer | default "" }}" rel="author">{{ .Params.writer | default ""}}</a>
             {{ end }}
           </span>
 
@@ -77,22 +77,22 @@
   {{ end }}
 
 </p></div>	</div>
-{{ if and (isset .Site.Params "author") .Site.Params.author }}
+{{ if $has_writer }}
 <div class="author-meta">
 
   <div class="author">
-    <img alt='{{ .Site.Params.author | default "" }}' src="https://www.gravatar.com/avatar/{{ md5  .Site.Params.email | default "" }}?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
+    <img alt='{{ .Params.writer }}' src="https://www.gravatar.com/avatar/{{ md5  $writer.email | default "" }}?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
 
     <span>
-      Written by:<a href="{{ .Site.Params.authorLink | default "" | absURL}}" title="Posts by {{ .Site.Params.author | default "" }}" rel="author">{{ .Site.Params.author | default "" }}</a>        </span>
+      Written by:<a href="{{ $writer.link | default "" | absURL}}" title="Posts by {{ .Params.writer }}" rel="author">{{ .Params.writer }}</a>        </span>
     </div>
     <div class="bio">
-      {{ range .Site.Params.bio }}
+      {{ range $writer.bio }}
       <p>{{ . | default "" | safeHTML }}</p>
       {{ end }}
 
 
-      {{ with .Site.Params.social.facebook }}
+      {{ with $writer.facebook }}
       <a class="facebook" target="_blank"
       href="{{ . }}">
       <i class="fa fa-facebook"
@@ -100,7 +100,7 @@
     </a>
     {{end}}
 
-    {{ with .Site.Params.social.googleplus }}
+    {{ with $writer.googleplus }}
     <a class="googleplus" target="_blank"
     href="{{ . }}">
     <i class="fa fa-google-plus"
@@ -109,14 +109,14 @@
   {{end}}
 
 
-  {{ with .Site.Params.social.twitter }}
+  {{ with $writer.twitter }}
   <a class="twitter" target="_blank"
   href="{{ . }}">
   <i class="fa fa-twitter-square"
   title="twitter icon"></i>
 </a>
 {{end}}
-{{ with .Site.Params.social.linkedin }}
+{{ with $writer.linkedin }}
 <a class="linkedin" target="_blank"
 href="{{ . }}">
 <i class="fa fa-linkedin-square"
@@ -124,7 +124,7 @@ title="linkedin icon"></i>
 </a>
 {{end}}
 
-{{ with .Site.Params.social.email }}
+{{ with $writer.email }}
 <a class="email" target="_blank"
 href="mailto:{{ . }}">
 <i class="fa fa-envelope"
@@ -132,7 +132,7 @@ title="email icon"></i>
 </a>
 {{end}}
 
-{{ with .Site.Params.social.instagram }}
+{{ with $writer.instagram }}
 <a class="instagram" target="_blank"
 href="{{ . }}">
 <i class="fa fa-instagram"
@@ -140,7 +140,7 @@ title="instagram icon"></i>
 </a>
 {{end}}
 
-{{ with .Site.Params.social.stackoverflow }}
+{{ with $writer.stackoverflow }}
 <a class="stackoverflow" target="_blank"
 href="{{ . }}">
 <i class="fa fa-stack-overflow"
@@ -148,7 +148,7 @@ title="stackoverflow icon"></i>
 </a>
 {{end}}
 
-{{ with .Site.Params.social.github }}
+{{ with $writer.github }}
 <a class="github" target="_blank"
 href="{{ . }}">
 <i class="fa fa-github"
@@ -157,7 +157,7 @@ title="github icon"></i>
 {{end}}
 
 
-{{ with .Site.Params.social.pinterest }}
+{{ with $writer.pinterest }}
 <a class="pinterest" target="_blank"
 href="{{ . }}">
 <i class="fa fa-pinterest"
