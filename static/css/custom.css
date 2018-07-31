@@ -2624,6 +2624,42 @@ li.pingback:first-child {
   max-width: 1280px;
 }
 
+/* 600px */
+@media all and (min-width: 37.5em) {
+  #disqus_thread {
+    width: 88.88%;
+    margin: 0 auto;
+  }
+}
+/* 700px */
+@media all and (min-width: 43.75em) {
+  #disqus_thread {
+    padding: 1.5em 10%;
+  }
+}
+/* 900px */
+@media all and (min-width: 56.25em) {
+  #disqus_thread {
+    padding: 1.5em 14.66%;
+  }
+}
+/* 1100px */
+@media all and (min-width: 68.75em) {
+  #disqus_thread {
+    padding: 1.5em 17.435% 3em;
+  }
+}
+/* 1200px */
+@media all and (min-width: 75em) {
+  #disqus_thread {
+    padding: 1.5em 19.75% 3em;
+  }
+}
+@media all and (min-width: 1400px) {
+  #disqus_thread {
+    padding: 1.5em 285px 3em;
+  }
+}
 /* bbpress Styles */
 .bbpress.archive .main {
   width: 100%;
