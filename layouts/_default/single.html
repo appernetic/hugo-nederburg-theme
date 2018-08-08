@@ -5,8 +5,13 @@
 
 
 {{ define "main" }}
-  {{ $has_writer := isset .Site.Params.writers (lower .Params.writer) }}
-  {{ $writer := index .Site.Params.writers (lower .Params.writer) | default dict }}
+  {{ $scratch := newScratch }}
+  {{ if .Site.Params.writers }}
+    {{ $scratch.Set "writer" (index .Site.Params.writers (lower .Params.writer) | default dict) }}
+  {{ else }}
+    {{ $scratch.Set "writer" .Site.Params.social | default dict }}
+  {{ end }}
+  {{ $writer := $scratch.Get "writer" }} 
   <div id="loop-container" class="loop-container">
     {{ if and (isset .Params "image") .Params.image }}
     <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
@@ -22,9 +27,7 @@
           <span class="date">{{ .Date.Format "02 January" }}</span>	<span> / </span>
 
           <span class="author">
-            {{ if $has_writer }}
             <a href="{{ $writer.link | default "" | absURL}}" title="Posts by {{ .Params.writer | default "" }}" rel="author">{{ .Params.writer | default ""}}</a>
-            {{ end }}
           </span>
 
 
@@ -77,7 +80,6 @@
   {{ end }}
 
 </p></div>	</div>
-{{ if $has_writer }}
 <div class="author-meta">
 
   <div class="author">
@@ -169,7 +171,7 @@ title="pinterest icon"></i>
 
 </div>
 </div>
-{{ end }}
+
 </div>
 </div>
 
