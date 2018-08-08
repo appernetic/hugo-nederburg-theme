@@ -16,9 +16,9 @@
 <link rel="stylesheet" id="ct-tracks-google-fonts-css" href="//fonts.googleapis.com/css?family=Raleway%3A400%2C700&amp;subset=latin%2Clatin-ext&amp;ver=4.7.2" type="text/css" media="all">
 <link rel="stylesheet" href="{{ "css/font-awesome.min.css" | absURL }}" type='text/css' media='all'>
 <!-- Theme stylesheet, if possible do not edit this stylesheet -->
-<link href="{{ "css/style.css" | absURL }}" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="{{ "css/style.css" | absURL }}?v={{ now.Unix }}" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 <!-- Custom stylesheet - for your changes -->
-<link href="{{ "css/custom.css" | absURL }}" rel="stylesheet" type='text/css' media='all'>
+<link href="{{ "css/custom.css" | absURL }}?v={{ now.Unix }}" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="{{ "img/favicon.ico" | absURL }}" type="image/x-icon">
 <link rel="icon" href="{{ "img/favicon.ico" | absURL }}" type="image/x-icon">
 {{ if .RSSLink }}
