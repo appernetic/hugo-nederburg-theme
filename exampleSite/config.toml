@@ -10,6 +10,8 @@ preserveTaxonomyNames = true
 paginate = 5 #frontpage pagination
 
 [params]
+  # Unmark to use post folder for images. Default is static folder.
+  #usepostimgfolder = true
   slogan = "A fast &amp; secure theme"
   description = "Describe your website" # meta description
   author = "Göran Svensson"
@@ -90,3 +92,4 @@ paginate = 5 #frontpage pagination
     instagram     = "full profile url in instagram"
     github        = "full profile url in github"
     pinterest     = "full profile url in pinterest"
+
