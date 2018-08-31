@@ -11,7 +11,7 @@
   {{ else }}
     {{ $scratch.Set "writer" .Site.Params.social | default dict }}
   {{ end }}
-  {{ $writer := $scratch.Get "writer" }} 
+  {{ $writer := $scratch.Get "writer" }}
   <div id="loop-container" class="loop-container">
     {{ if and (isset .Params "image") .Params.image }}
     <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
@@ -80,20 +80,30 @@
   {{ end }}
 
 </p></div>	</div>
+
+	{{ if and (isset .Site.Params "author") .Site.Params.author }}
 <div class="author-meta">
 
   <div class="author">
-    <img alt='{{ .Params.writer }}' src="https://www.gravatar.com/avatar/{{ md5  $writer.email | default "" }}?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
-
+    	{{ if and (isset .Params "writer") $writer.email }}
+    <img alt='{{ .Params.writer | default .Site.Params.author }}' src="https://www.gravatar.com/avatar/{{ md5 $writer.email }}?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
+    {{ else }}
+      <img alt='{{ .Params.writer | default .Site.Params.author }}' src="https://www.gravatar.com/avatar/{{ md5 .Site.Params.email }}?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
+    {{ end }}
     <span>
-      Written by:<a href="{{ $writer.link | default "" | absURL}}" title="Posts by {{ .Params.writer }}" rel="author">{{ .Params.writer }}</a>        </span>
+      Written by:<a href="{{ $writer.link | default .Site.Params.authorlink | absURL}}" title="Posts by {{ .Params.writer | default .Site.Params.author }}" rel="author">{{ .Params.writer | default .Site.Params.author }}</a> </span>
     </div>
     <div class="bio">
-      {{ range $writer.bio }}
+      {{ if and (isset .Params "writer") $writer.bio }}
+      {{ range $writer.bio  }}
+      <p>{{ . | default "" | safeHTML }}</p>
+        {{ end }}
+      {{ else }}
+      {{ range .Site.Params.bio  }}
       <p>{{ . | default "" | safeHTML }}</p>
       {{ end }}
-
-
+      {{ end }}
+	{{ if isset .Params "writer" }}
       {{ with $writer.facebook }}
       <a class="facebook" target="_blank"
       href="{{ . }}">
@@ -168,10 +178,85 @@ title="pinterest icon"></i>
 {{end}}
 
 
+{{ else }}
+{{ with .Site.Params.social.facebook }}
+<a class="facebook" target="_blank"
+href="{{ . }}">
+<i class="fa fa-facebook"
+title="facebook icon"></i>
+</a>
+{{end}}
+
+{{ with .Site.Params.social.googleplus }}
+<a class="googleplus" target="_blank"
+href="{{ . }}">
+<i class="fa fa-google-plus"
+title="googleplus icon"></i>
+</a>
+{{end}}
+
+
+{{ with .Site.Params.social.twitter }}
+<a class="twitter" target="_blank"
+href="{{ . }}">
+<i class="fa fa-twitter-square"
+title="twitter icon"></i>
+</a>
+{{end}}
+{{ with .Site.Params.social.linkedin }}
+<a class="linkedin" target="_blank"
+href="{{ . }}">
+<i class="fa fa-linkedin-square"
+title="linkedin icon"></i>
+</a>
+{{end}}
+
+{{ with .Site.Params.social.email }}
+<a class="email" target="_blank"
+href="mailto:{{ . }}">
+<i class="fa fa-envelope"
+title="email icon"></i>
+</a>
+{{end}}
+
+{{ with .Site.Params.social.instagram }}
+<a class="instagram" target="_blank"
+href="{{ . }}">
+<i class="fa fa-instagram"
+title="instagram icon"></i>
+</a>
+{{end}}
+
+{{ with .Site.Params.social.stackoverflow }}
+<a class="stackoverflow" target="_blank"
+href="{{ . }}">
+<i class="fa fa-stack-overflow"
+title="stackoverflow icon"></i>
+</a>
+{{end}}
+
+{{ with .Site.Params.social.github }}
+<a class="github" target="_blank"
+href="{{ . }}">
+<i class="fa fa-github"
+title="github icon"></i>
+</a>
+{{end}}
+
+
+{{ with .Site.Params.social.pinterest }}
+<a class="pinterest" target="_blank"
+href="{{ . }}">
+<i class="fa fa-pinterest"
+title="pinterest icon"></i>
+</a>
+{{end}}
+{{ end }}
+
 
 </div>
 </div>
-
+{{ end }}
 </div>
 </div>
 
