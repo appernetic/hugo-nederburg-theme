@@ -4,6 +4,7 @@ draft = false
 image = "img/portfolio/camera1.jpg"
 date = "2016-11-05T19:59:22+05:30"
 title = "A Post with lot of comments"
+writer = "Göran Svensson"
 weight = 8
 +++
 
