@@ -42,7 +42,7 @@ Create `css/custom.css` in your `<<base dir>>/static` folder and add all your cu
 
 ### Comments
 
-The optional comments system is powered by [Disqus](https://disqus.com). If you want to enable comments, create an account in Disqus and write down your shortname.
+The optional comments system is powered by [Disqus](https://disqus.com). If you want to enable comments, create an account in Disqus and write down your shortname in the config file.
 
 ```toml
 disqusShortname = "your-disqus-short-name"
@@ -69,6 +69,31 @@ Since this page will be static, you can use [formspree.io](//formspree.io/) as p
 3. Send a dummy email yourself to confirm your account
 4. Click the confirm link in the email from [formspree.io](//formspree.io/)
 5. You're done. Happy mailing!
+
+## Multiple Writers Features
+Thanks to Lukas Herman's PR there is now a multiple writers feature. In order to support multiple writers, an extra key, "writers" is added, in config.toml. The format looks like the following:
+
+```
+  [params.writers."Göran Svensson"]
+    link = "https://appernetic.io/"
+    email = "goran@molnsys.com"
+    bio = [
+      "Göran is an avid blogger and the founder of <a href='https://appernetic.io/'>Appernetic.io</a>. This is the author bio shown after posts."
+    ]
+    facebook      = "full Göran profile url in facebook"
+    googleplus    = "full profile url in googleplus"
+    twitter       = "full profile url in twitter"
+    linkedin      = "full profile url in linkedin"
+    stackoverflow = "full profile url in stackoverflow"
+    instagram     = "full profile url in instagram"
+    github        = "full profile url in github"
+    pinterest     = "full profile url in pinterest"
+```
+
+Now you must have an author in the config for the author bio section to be visible. If you have a writer and set it in the markdown file it will override the author in the config. See the exampleSite folder for a working solution.
+
+
+
 
 ### Nearly finished
 
