@@ -5,8 +5,8 @@ writer = "Göran Svensson"
 draft = false
 image = "img/portfolio/logs1.jpg"
 showonlyimage = false
-categories = [ "Design"]
-weight = 1
+categories = [ "design"]
+weight = 2
 description = "Individual meta description for this post"
 +++
 

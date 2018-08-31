@@ -6,7 +6,7 @@ title = "Another Awesome Post"
 writer = "Göran Svensson"
 categories = [ "travel" ]
 draft = false
-weight = 2
+weight = 3
 +++
 
 Fifth abundantly made Give sixth hath. Cattle creature i be don't them.

@@ -14,6 +14,7 @@ paginate = 5 #frontpage pagination
   #usepostimgfolder = true
   slogan = "A fast &amp; secure theme"
   description = "Describe your website" # meta description
+  # You need to set author to have an author bio. If you have a writer in the markdown file it will override this.
   author = "Göran Svensson"
   authorLink = "https://appernetic.io/"
   bio = [
@@ -56,8 +57,9 @@ paginate = 5 #frontpage pagination
   url = "contact/"
   weight = 3
 
+# this will also be in author bio if there is no writer.
   [params.social]
-  facebook      = "full profile url in facebook"
+  facebook      = "full Social profile url in facebook"
   googleplus    = "full profile url in googleplus"
   email         = "email@example.com"
   twitter       = "full profile url in twitter"
@@ -68,11 +70,15 @@ paginate = 5 #frontpage pagination
   pinterest     = "full profile url in pinterest"
   rss           = true
 
+# Add a writer, then use it in the markdown front matter like this: writer = "Lukas Herman"
   [params.writers]
     [params.writers."Lukas Herman"]
     link = "https://lherman.tk"
-    email = "writer_email@example.com"
-    facebook      = "full profile url in facebook"
+    email = "lherman.cs@gmail.com"
+    bio = [
+      "Lukas has a few skills up his sleve. He can fly blindfolded under a bridge while simultanous writing blog posts."
+    ]
+    facebook      = "full lukas profile url in facebook"
     googleplus    = "full profile url in googleplus"
     twitter       = "full profile url in twitter"
     linkedin      = "full profile url in linkedin"
@@ -83,8 +89,11 @@ paginate = 5 #frontpage pagination
 
     [params.writers."Göran Svensson"]
     link = "https://appernetic.io/"
-    email = "writer_email@example.com"
-    facebook      = "full profile url in facebook"
+    email = "goran@molnsys.com"
+    bio = [
+      "Göran is an avid blogger and the founder of <a href='https://appernetic.io/'>Appernetic.io</a>. This is the author bio shown after posts."
+    ]
+    facebook      = "full Göran profile url in facebook"
     googleplus    = "full profile url in googleplus"
     twitter       = "full profile url in twitter"
     linkedin      = "full profile url in linkedin"
@@ -92,4 +101,3 @@ paginate = 5 #frontpage pagination
     instagram     = "full profile url in instagram"
     github        = "full profile url in github"
     pinterest     = "full profile url in pinterest"
-
