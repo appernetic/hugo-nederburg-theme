@@ -48,7 +48,7 @@
 						 {{ range .Params.categories }}
 							<span> / </span>
 						<span class="category">
-							<a href="/categories{{ . | relURL }}">{{ . }}</a>
+							<a href="/categories/{{ . | urlize }}">{{ . }}</a>
 						</span>
 						{{ end }}
 					</div>
