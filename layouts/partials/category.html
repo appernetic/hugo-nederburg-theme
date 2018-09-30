@@ -12,7 +12,7 @@
 
 <h1 class="screen-reader-text">Posts</h1>
 <div id="loop-container" class="loop-container">
-  {{ range $index, $element := (where .Data.Pages "Section" "post") }}
+  {{ range $index, $element := (where .Data.Pages "Section" "post").ByDate.Reverse }}
 
 	{{ $scratch := newScratch }}
 	{{ if .Site.Params.writers }}
