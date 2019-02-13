@@ -2638,7 +2638,7 @@ li.pingback:first-child {
 }
 @media all and (min-width: 1400px) {
   #disqus_thread {
-    padding: 1.5em 285px 3em;
+    padding: 1.5em 20px 3em;
   }
 }
 /* bbpress Styles */
