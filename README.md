@@ -106,6 +106,23 @@ $ hugo server
 Now enter [`localhost:1313`](http://localhost:1313) in the address bar of your browser.
 
 
+### Privacy settings for Google Analytics
+
+Thanks to @mstroh76 we now have privacy settings for analytics. This is how you configure it:
+
+```
+[privacy]
+  # Google Analytics privacy settings - https://gohugo.io/about/hugo-and-gdpr/index.html#googleanalytics
+  [privacy.googleAnalytics]
+    # set to true to disable service 
+    disable = false
+    # set to true to meet General Data Protection Regulation (GDPR)
+    anonymizeIP = false
+    respectDoNotTrack = false
+    useSessionStorage = false
+```
+
+
 ## Things to do and not (yet) implemented
 
  - Add the possibility for a description for each category.
