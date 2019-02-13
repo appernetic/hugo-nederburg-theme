@@ -73,7 +73,7 @@ Since this page will be static, you can use [formspree.io](//formspree.io/) as p
 ## Multiple Writers Features
 Thanks to Lukas Herman's PR there is now a multiple writers feature. In order to support multiple writers, an extra key, "writers" is added, in config.toml. The format looks like the following:
 
-```
+```toml
   [params.writers."Göran Svensson"]
     link = "https://appernetic.io/"
     email = "goran@molnsys.com"
@@ -93,7 +93,13 @@ Thanks to Lukas Herman's PR there is now a multiple writers feature. In order to
 Now you must have an author in the config for the author bio section to be visible. If you have a writer and set it in the markdown file it will override the author in the config. See the exampleSite folder for a working solution.
 
 
+## Images
 
+Default is to use the static folder for images. If you want to have images in the post folder you unmark the seetings in the config file. 
+
+```toml
+#UsePostImgFolder = true
+```
 
 ### Nearly finished
 
