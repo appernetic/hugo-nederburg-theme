@@ -108,7 +108,7 @@ Now enter [`localhost:1313`](http://localhost:1313) in the address bar of your b
 
 ### Privacy settings for Google Analytics
 
-Thanks to @mstroh76 we now have privacy settings for analytics. This is how you configure it:
+Thanks to [mstroh76](https://github.com/mstroh76) we now have privacy settings for analytics. This is how you configure it:
 
 ```
 [privacy]
