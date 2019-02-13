@@ -100,23 +100,11 @@ Default is to use the static folder for images. If you want to have images in th
 ```toml
 #UsePostImgFolder = true
 ```
-
-### Nearly finished
-
-In order to see your site in action, run Hugo's built-in local server.
-
-```
-$ hugo server
-```
-
-Now enter [`localhost:1313`](http://localhost:1313) in the address bar of your browser.
-
-
 ### Privacy settings for Google Analytics
 
 Thanks to [mstroh76](https://github.com/mstroh76) we now have privacy settings for analytics. This is how you configure it (included in exampleSite config.toml):
 
-```
+```toml
 [privacy]
   # Google Analytics privacy settings - https://gohugo.io/about/hugo-and-gdpr/index.html#googleanalytics
   [privacy.googleAnalytics]
@@ -127,6 +115,16 @@ Thanks to [mstroh76](https://github.com/mstroh76) we now have privacy settings f
     respectDoNotTrack = false
     useSessionStorage = false
 ```
+
+### Nearly finished
+
+In order to see your site in action, run Hugo's built-in local server.
+
+```
+$ hugo server
+```
+
+Now enter [`localhost:1313`](http://localhost:1313) in the address bar of your browser.
 
 
 ## Things to do and not (yet) implemented
