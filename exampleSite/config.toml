@@ -9,6 +9,16 @@ googleAnalytics = ""
 preserveTaxonomyNames = true
 paginate = 5 #frontpage pagination
 
+[privacy]
+  # Google Analytics privacy settings - https://gohugo.io/about/hugo-and-gdpr/index.html#googleanalytics
+  [privacy.googleAnalytics]
+    # set to true to disable service 
+    disable = false
+    # set to true to meet General Data Protection Regulation (GDPR)
+    anonymizeIP = false
+    respectDoNotTrack = false
+    useSessionStorage = false
+
 [params]
   # Unmark to use post folder for images. Default is static folder.
   #usepostimgfolder = true
