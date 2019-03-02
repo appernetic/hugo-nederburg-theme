@@ -32,6 +32,8 @@ To have an image in your author bio shown after posts, go to [Gravatar](https://
 email = "your@gravatar.email"
 ```
 
+If you are using the **Multiple Writers Features** the Gravitar email address will be taken from the `writers."Writer Name".email` parameter. If you are not using the Multiple Writers Feature and you set the front matter `writer` property to any value (including blank) the  `.Site.Params.social.email` configuration will be used if it is set other wise the `.Site.email` property will be used.
+
 ### Style
 
 Nederburg uses the minified production version of the style sheet from the wordpress version.
@@ -60,7 +62,7 @@ googleAnalytics = "UA-XXXXX-X"
 
 Leave the `googleAnalytics` key empty to disable it.
 
-### Make the contact form working
+### Make the contact form work
 
 Since this page will be static, you can use [formspree.io](//formspree.io/) as proxy to send the actual email. Each month, visitors can send you up to one thousand emails without incurring extra charges. Begin the setup by following the steps below:
 
@@ -71,6 +73,7 @@ Since this page will be static, you can use [formspree.io](//formspree.io/) as p
 5. You're done. Happy mailing!
 
 ## Multiple Writers Features
+
 Thanks to Lukas Herman's PR there is now a multiple writers feature. In order to support multiple writers, an extra key, "writers" is added, in config.toml. The format looks like the following:
 
 ```toml
@@ -90,12 +93,17 @@ Thanks to Lukas Herman's PR there is now a multiple writers feature. In order to
     pinterest     = "full profile url in pinterest"
 ```
 
-Now you must have an author in the config for the author bio section to be visible. If you have a writer and set it in the markdown file it will override the author in the config. See the exampleSite folder for a working solution.
+If you have a writer and set it in the front matter of the post markdown file it will override the author in the config. See the exampleSite folder for a working solution. Here is an example of a front matter entry for the writer defined above.
 
+```toml
+writer = "Göran Svensson"
+```
+
+If you do not define a writer in the front matter the post will default to the `.Site.Author` and use the `.Site.Params.social` configuration entries for the Author links.
 
 ## Images
 
-Default is to use the static folder for images. If you want to have images in the post folder you unmark the seetings in the config file. 
+Default is to use the static folder for images. If you want to have images in the post folder you unmark the seetings in the config file.
 
 ```toml
 #UsePostImgFolder = true
@@ -108,7 +116,7 @@ Thanks to [mstroh76](https://github.com/mstroh76) we now have privacy settings f
 [privacy]
   # Google Analytics privacy settings - https://gohugo.io/about/hugo-and-gdpr/index.html#googleanalytics
   [privacy.googleAnalytics]
-    # set to true to disable service 
+    # set to true to disable service
     disable = false
     # set to true to meet General Data Protection Regulation (GDPR)
     anonymizeIP = false
@@ -158,4 +166,4 @@ List of all the great people and organisations that help us fund this open sourc
 
 If you want to help support check out my Patreon @ https://www.patreon.com/appernetic
 
-[Timothy D. Swieter](https://github.com/Swieter) 
+[Timothy D. Swieter](https://github.com/Swieter)
