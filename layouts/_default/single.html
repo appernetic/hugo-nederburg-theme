@@ -24,7 +24,7 @@
 
         {{ end }}
         <div class="entry-meta">
-          <span class="date">{{ .Date.Format "02 January" }}</span>	<span> / </span>
+          <span class="date">{{ .Date.Format .Site.Params.DateForm }}</span>	<span> / </span>
 
           <span class="author">
             <a href="{{ $writer.link | default "" | absURL}}" title="Posts by {{ .Params.writer | default "" }}" rel="author">{{ .Params.writer | default ""}}</a>
