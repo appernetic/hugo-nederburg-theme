@@ -36,6 +36,10 @@ paginate = 5 #frontpage pagination
     "A port of Tracks by Compete Themes."
   ]
 
+  # Set the date formatting as required, comment/uncomment as required
+  DateForm         = "2 January"  
+  # DateForm         = "2 January 2006"
+
 
   # Contact page
      # Since this template is static, the contact form uses www.formspree.io as a
