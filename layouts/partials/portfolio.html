@@ -7,7 +7,7 @@
   {{ if .Site.Params.writers }}
     {{ $scratch.Set "writer" (index .Site.Params.writers (lower .Params.writer) | default dict) }}
   {{ else }}
-    {{ $scratch.Set "writer" .Site.Params.social | default dict }}
+    {{ $scratch.Set "writer" (.Site.Params.social | default dict) }}
   {{ end }}
   {{ $writer := $scratch.Get "writer" }}
 	{{ if and (isset .Params "image") .Params.image }}
@@ -28,7 +28,7 @@
 				{{ end }}
 				<div class="excerpt-container">
 					<div class="excerpt-meta">
-						<span class="date">{{ .Date.Format "02 January" }}</span>	
+						<span class="date">{{ .Date.Format "02 January" }}</span>
 
 						{{ if and (isset .Site.Params "authorlink") .Site.Params.authorLink }}
 							{{ if and (isset .Site.Params "author") .Site.Params.author }}

@@ -9,7 +9,7 @@
   {{ if .Site.Params.writers }}
     {{ $scratch.Set "writer" (index .Site.Params.writers (lower .Params.writer) | default dict) }}
   {{ else }}
-    {{ $scratch.Set "writer" .Site.Params.social | default dict }}
+    {{ $scratch.Set "writer" (.Site.Params.social | default dict) }}
   {{ end }}
   {{ $writer := $scratch.Get "writer" }}
   <div id="loop-container" class="loop-container">
@@ -27,7 +27,7 @@
           <span class="date">{{ .Date.Format "02 January" }}</span>	<span> / </span>
 
           <span class="author">
-            <a href="{{ $writer.link | default "" | absURL}}" title="Posts by {{ .Params.writer | default "" }}" rel="author">{{ .Params.writer | default ""}}</a>
+            <a href="{{ $writer.link | default .Site.Params.authorlink | absURL }}" title="Posts by {{ .Params.writer | default .Site.Params.author }}" rel="author">{{ .Params.writer | default .Site.Params.author }}</a>
           </span>
 
 
