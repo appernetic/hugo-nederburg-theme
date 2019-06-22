@@ -153,8 +153,7 @@ Have you found a bug or got an idea for a new feature? Feel free to use the [iss
 
 ## License
 
-This port is released under the MIT License.
-
+This port is released under the [GPL License, either version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt), or (at your option) any later version.  See the LICENSE file for details.
 
 ## Thanks
 

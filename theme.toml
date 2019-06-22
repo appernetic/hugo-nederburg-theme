@@ -2,7 +2,7 @@
 # See https://github.com/spf13/hugoThemes#themetoml for an example
 
 name = "NEDERBURG"
-license = "MIT"
+license = "GPL-2"
 licenselink = "https://github.com/appernetic/hugo-nederburg-theme/blob/master/LICENSE"
 description = "Port of Tracks Theme https://www.competethemes.com/tracks/"
 homepage = "https://github.com/appernetic/hugo-nederburg-theme"
