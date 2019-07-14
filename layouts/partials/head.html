@@ -22,8 +22,10 @@
 <link href="{{ "css/custom.css" | absURL }}?v={{ now.Unix }}" rel="stylesheet" type='text/css' media='all'>
 <link rel="shortcut icon" href="{{ "img/favicon.ico" | absURL }}" type="image/x-icon">
 <link rel="icon" href="{{ "img/favicon.ico" | absURL }}" type="image/x-icon">
-{{ if .RSSLink }}
-<link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title | default "" }}" />
-<link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title | default "" }}" />
+{{ if .Params.social.rss }}
+{{ with .OutputFormats.Get "RSS" }}
+<link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title | default "" }}" />
+<link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title | default "" }}" />
+{{ end }}
 {{ end }}
 {{ template "_internal/google_analytics_async.html" . }}

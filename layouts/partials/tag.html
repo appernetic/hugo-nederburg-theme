@@ -2,10 +2,12 @@
 	<h1>
 		Tag: {{ .Title }}
 		{{ if .Site.Params.social.rss }}
-		<a href="{{ .RSSLink }}" data-animate-hover="pulse" class="in-page-rss" target="_blank">
+		{{ with .OutputFormats.Get "RSS" }}
+		<a href="{{ .RelPermalink }}" data-animate-hover="pulse" class="in-page-rss" target="_blank">
             <i class="fas fa-rss" title="rss"></i>
             <span class="screen-reader-text">rss</span>
 		</a>
+		{{ end }}
 		{{ end }}
 	</h1>
 </div>
