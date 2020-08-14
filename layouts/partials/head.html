@@ -17,11 +17,11 @@
 <!-- Upgraded to Font Awesome 5.3 no need for local files using all.css so all icons are available -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 <!-- Theme stylesheet, if possible do not edit this stylesheet -->
-<link href="{{ "css/style.css" | absURL }}?v={{ now.Unix }}" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+<link href="{{ "css/style.css" | relURL }}?v={{ now.Unix }}" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
 <!-- Custom stylesheet - for your changes -->
-<link href="{{ "css/custom.css" | absURL }}?v={{ now.Unix }}" rel="stylesheet" type='text/css' media='all'>
-<link rel="shortcut icon" href="{{ "img/favicon.ico" | absURL }}" type="image/x-icon">
-<link rel="icon" href="{{ "img/favicon.ico" | absURL }}" type="image/x-icon">
+<link href="{{ "css/custom.css" | relURL }}?v={{ now.Unix }}" rel="stylesheet" type='text/css' media='all'>
+<link rel="shortcut icon" href="{{ "img/favicon.ico" | relURL }}" type="image/x-icon">
+<link rel="icon" href="{{ "img/favicon.ico" | relURL }}" type="image/x-icon">
 {{ if .RSSLink }}
 <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title | default "" }}" />
 <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title | default "" }}" />
