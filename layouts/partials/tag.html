@@ -26,7 +26,7 @@
 				{{ end }}
 
 				{{ if and (isset .Params "image") .Params.image }}
-				<a class="featured-image-link" href="{{ .Permalink }}"><div class='featured-image lazy lazy-bg-image'   data-background="{{ .Params.image | absURL }}"></div></a>
+				<a class="featured-image-link" href="{{ .Permalink }}"><div class='featured-image lazy lazy-bg-image'   data-background="{{ .Params.image | relURL }}"></div></a>
 
 				{{ end }}
 
@@ -38,7 +38,7 @@
 
 						<span class="author">
 							{{ if and (isset .Site.Params "authorlink") .Site.Params.authorLink }}
-							<a href="{{ .Site.Params.authorLink | default "" | absURL }}" title="Posts by {{ .Site.Params.author | default "" }}" rel="author">{{ .Site.Params.author | default "" }}</a>
+							<a href="{{ .Site.Params.authorLink | default "" | relURL }}" title="Posts by {{ .Site.Params.author | default "" }}" rel="author">{{ .Site.Params.author | default "" }}</a>
 							{{ else }}
 							{{ .Site.Params.author | default "" }}
 							{{ end }}

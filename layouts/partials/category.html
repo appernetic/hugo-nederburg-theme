@@ -33,7 +33,7 @@
 		{{ end }}
 
 		{{ if and (isset .Params "image") .Params.image }}
-			<a class="featured-image-link" href="{{ .Permalink }}"><div class='featured-image lazy lazy-bg-image' {{if isset .Site.Params "usepostimgfolder"}}data-background="{{ .Permalink }}{{ .Params.image }}"{{ else }}data-background="{{ .Params.image | absURL }}"{{ end }}></div></a>
+			<a class="featured-image-link" href="{{ .Permalink }}"><div class='featured-image lazy lazy-bg-image' {{if isset .Site.Params "usepostimgfolder"}}data-background="{{ .Permalink }}{{ .Params.image }}"{{ else }}data-background="{{ .Params.image | relURL }}"{{ end }}></div></a>
 		{{ end }}
 
 				<div class="excerpt-container">
@@ -46,7 +46,7 @@
 								{{ if and (isset .Site.Params "author") .Site.Params.author }}
 								<span> / </span>
 							<span class="author">
-							<a href="{{ $writer.link | default .Site.Params.authorlink | absURL }}" title="Posts by {{ .Params.writer | default .Site.Params.author }}" rel="author">{{ .Params.writer | default .Site.Params.author }}</a>
+							<a href="{{ $writer.link | default .Site.Params.authorlink | relURL }}" title="Posts by {{ .Params.writer | default .Site.Params.author }}" rel="author">{{ .Params.writer | default .Site.Params.author }}</a>
 							</span>
 								{{ end }}
 							{{ else }}
