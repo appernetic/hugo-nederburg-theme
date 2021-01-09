@@ -5,10 +5,16 @@
 {{ define "main" }}
 {{ $scratch := newScratch }}
 
+{{ $writerName := .Site.Params.author | default "" }}
 {{ if .Site.Params.writers }}
-{{ $scratch.Set "writer" (index .Site.Params.writers (lower .Params.writer) | default dict) }}
+    {{ $index := $writerName }}
+    {{ if .Params.writer }}
+        {{ $index := (lower .Params.writer) }}
+        {{ $writerName := .Params.writer}}
+    {{ end }}
+    {{ $scratch.Set "writer" (index .Site.Params.writers $index | default dict) }}
 {{ else }}
-{{ $scratch.Set "writer" .Site.Params.social | default dict }}
+    {{ $scratch.Set "writer" .Site.Params.social | default dict }}
 {{ end }}
 
 {{ $writer := $scratch.Get "writer" }}
@@ -34,7 +40,7 @@
     {{ if .Page.Resources.Match "img/header.png" }}
     {{ $header := .Page.Resources.GetMatch "img/header.png" }}
     <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
-        <div class='featured-image lazy lazy-bg-image' data-background="{{ $header.Permalink }}"></div>
+        <div class='featured-image lazy lazy-bg-image' data-background="{{ $header.Permalink }}" ></div>
         {{ else }}
         <div class="post type-post status-publish format-standard hentry category-standard category-travel entry full-without-featured odd excerpt-1">
             {{ end }}
@@ -43,8 +49,8 @@
                 <span class="date">{{ .Date.Format "02 January" }}</span> <span> / </span>
 
                 <span class="author">
-          <a href="{{ $writer.link | default "" | absURL}}" title="Posts by {{ .Params.writer | default "" }}"
-             rel="author">{{ .Params.writer | default ""}}</a>
+          <a href="{{ $writer.link | default "" | absURL}}" title="Posts by {{ $writerName | default "" }}"
+             rel="author">{{ $writerName | default ""}}</a>
       </span>
 
 
@@ -52,7 +58,7 @@
                 <span class="category">
             <span> / </span>
 
-            <a href="{{ (printf " %s%s" "/categories/" ( urlize . ) ) | relURL }}" title="Category {{ . }}">{{ . }}</a>
+            <a href="{{ (printf "%s%s" "/categories/" ( urlize . ) ) | relURL }}" title="Category {{ . }}">{{ . }}</a>
           </span>
                 {{ end }}
 
@@ -105,26 +111,26 @@
 
                     <div class="author">
                         {{ if and (isset .Params "writer") $writer.email }}
-                        <img alt='{{ .Params.writer | default .Site.Params.author }}'
+                        <img alt='{{ $writerName | default .Site.Params.author }}'
                              src="https://www.gravatar.com/avatar/{{ md5 $writer.email }}?s=100&d=identicon"
                              class='avatar avatar-72 photo' height='72' width='72'>
                         {{ else }}
-                        <img alt='{{ .Params.writer | default .Site.Params.author }}'
+                        <img alt='{{ $writerName | default .Site.Params.author }}'
                              src="https://www.gravatar.com/avatar/{{ md5 .Site.Params.email }}?s=100&d=identicon"
                              class='avatar avatar-72 photo' height='72' width='72'>
                         {{ end }}
                         <span>
       Written by:<a href="{{ $writer.link | default .Site.Params.authorlink | absURL}}"
-                    title="Posts by {{ .Params.writer | default .Site.Params.author }}"
-                    rel="author">{{ .Params.writer | default .Site.Params.author }}</a> </span>
+                    title="Posts by {{ $writerName | default .Site.Params.author }}"
+                    rel="author">{{ $writerName | default .Site.Params.author }}</a> </span>
                     </div>
                     <div class="bio">
                         {{ if and (isset .Params "writer") $writer.bio }}
-                        {{ range $writer.bio }}
+                        {{ range $writer.bio  }}
                         <p>{{ . | default "" | safeHTML }}</p>
                         {{ end }}
                         {{ else }}
-                        {{ range .Site.Params.bio }}
+                        {{ range .Site.Params.bio  }}
                         <p>{{ . | default "" | safeHTML }}</p>
                         {{ end }}
                         {{ end }}
@@ -224,4 +230,6 @@
     </div>
 
     <!--</div>--> <!-- .main -->
+
+
     {{ end }}

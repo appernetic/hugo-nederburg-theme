@@ -6,6 +6,7 @@ title = "Another Awesome Post"
 categories = [ "travel" ]
 draft = false
 weight = 2
+writer= "Alexey Nevinsky"
 +++
 
 Fifth abundantly made Give sixth hath. Cattle creature i be don't them.

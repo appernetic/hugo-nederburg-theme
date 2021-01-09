@@ -1,0 +1,57 @@
+baseurl: "https://nevinsky.net"
+languageCode: "en-us"
+title: "Demo hugo blog"
+theme: "hugo-nederburg-theme"
+preserveTaxonomyNames: true
+paginate: 15 #frontpage pagination
+
+menu:
+  main:
+    - name: "About"
+      url: "about/"
+      weight: 2
+
+params:
+  description: "Personal website which covers software engineering, devops and many other topics"
+  slogan: "software engineering, devops"
+  author: "Alexey Nevinsky"
+  authorLink: "https://nevinsky.net/about/"
+  copyright:
+    - "&copy; 2020 Alexey Nevinsky"
+  image: "img/about.jpg"
+  title: "Alexey Nevinsky's blog"
+  keywords:
+    - "software engineering"
+    - "gamedev"
+    - "devops"
+    - "grafomania"
+
+  social:
+    github: "https://github.com/inver"
+    facebook: "https://www.facebook.com/alexey.nevinsky"
+    linkedin: "https://www.linkedin.com/in/nevinsky"
+    email: "alexey@nevinsky.net"
+    rss: true
+
+  writers:
+    "Alexey Nevinsky":
+      link: "https://nevinsky.net/about"
+      email: "alexey@nevinsky.net"
+      github: "https://github.com/inver"
+      facebook: "https://www.facebook.com/alexey.nevinsky"
+      linkedin: "https://www.linkedin.com/in/nevinsky"
+  #      bio:
+  #        - "Lukas has a few skills up his sleve. He can fly blindfolded under a bridge while simultanous writing blog posts."
+  #      facebook: "full lukas profile url in facebook"
+  #      googleplus: "full profile url in googleplus"
+  #      twitter: "full profile url in twitter"
+  #      linkedin: "full profile url in linkedin"
+  #      stackoverflow: "full profile url in stackoverflow"
+  #      instagram: "full profile url in instagram"
+  #      github: "full profile url in github"
+  #      pinterest: "full profile url in pinterest"
+
+module:
+  mounts:
+    - source: themes/hugo-nederburg-theme/assets
+      target: assets
