@@ -7,7 +7,7 @@
     <title>
         {{ if $.IsHome}}
             {{ $.Site.Params.slogan | default "" | safeHTML }}
-        {{ else if isset $.Site.Params.sections $.Section }}
+        {{ else if $.Site.Params.sections }}
             {{ $sectionName := (index $.Site.Params.sections $.Section).Name }}
             {{ if $sectionName }}
                 {{ $sectionName }}: {{ $.Title }}
