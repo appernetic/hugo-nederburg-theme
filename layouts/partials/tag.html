@@ -3,16 +3,15 @@
 		Tag: {{ .Title }}
 		{{ if .Site.Params.social.rss }}
 		<a href="{{ .RSSLink }}" data-animate-hover="pulse" class="in-page-rss" target="_blank">
-            <i class="fa fa-rss" title="rss"></i>
+            <i class="fas fa-rss" title="rss"></i>
             <span class="screen-reader-text">rss</span>
 		</a>
 		{{ end }}
 	</h1>
 </div>
 
-<h1 class="screen-reader-text">Posts</h1>
 <div id="loop-container" class="loop-container">
-  {{ range $index, $element := (where .Data.Pages "Section" "post") }}
+  {{ range $index, $element := (where .Data.Pages "Section" "post").ByDate.Reverse }}
 	{{ if and (isset .Params "image") .Params.image }}
 	{{ if eq (mod $index 2) 0 }}
 	<div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-memories tag-normal-post tag-standard-2 excerpt zoom full-without-featured odd excerpt">
@@ -48,13 +47,13 @@
 						 {{ range .Params.categories }}
 							<span> / </span>
 						<span class="category">
-							<a href="/categories{{ . | relURL }}">{{ . }}</a>
+							<a href="/categories/{{ . | urlize }}">{{ . }}</a>
 						</span>
 						{{ end }}
 					</div>
 							<div class='excerpt-header'>
 								<h2 class='excerpt-title'>
-									<a href="{{ .Permalink }} "> {{ .Title }} </a>
+									<a href="{{ .Permalink }}"> {{ .Title }} </a>
 								</h2>
 							</div>
 							<div class='excerpt-content'>

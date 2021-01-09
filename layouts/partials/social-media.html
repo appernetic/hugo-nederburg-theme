@@ -1,0 +1,49 @@
+<ul class="social-media-icons">
+    {{ with .Site.Params.social.facebook }}
+        <li>
+            <a href="{{ . }}" data-animate-hover="pulse" class="facebook" target="_blank" rel="noreferrer"
+               title="Link to facebook">
+                <i class="fab fa-facebook-square" title="facebook"></i>
+                <span class="screen-reader-text">facebook</span>
+            </a>
+        </li>
+    {{end}}
+
+    {{ with .Site.Params.social.email }}
+        <li>
+            <a href="mailto:{{ . }}" data-animate-hover="pulse" class="email" title="Link to mail">
+                <i class="fas fa-envelope" title="email"></i>
+                <span class="screen-reader-text">email</span>
+            </a>
+        </li>
+    {{end}}
+
+    {{ with .Site.Params.social.linkedin }}
+        <li>
+            <a href="{{ . }}" data-animate-hover="pulse" class="linkedin" target="_blank" rel="noreferrer"
+               title="Link to linkedin">
+                <i class="fab fa-linkedin-in" title="linkedin"></i>
+                <span class="screen-reader-text">linkedin</span>
+            </a>
+        </li>
+    {{end}}
+
+    {{ with .Site.Params.social.github }}
+        <li>
+            <a href="{{ . }}" data-animate-hover="pulse" class="github" target="_blank" rel="noreferrer"
+               title="Link to github">
+                <i class="fab fa-github" title="github"></i>
+                <span class="screen-reader-text">github</span>
+            </a>
+        </li>
+    {{end}}
+
+    {{ if .Site.Params.social.rss }}
+        <li>
+            <a href="{{ .Site.RSSLink }}" data-animate-hover="pulse" class="rss" target="_blank" title="Rss link">
+                <i class="fas fa-rss" title="rss"></i>
+                <span class="screen-reader-text">rss</span>
+            </a>
+        </li>
+    {{end}}
+</ul>

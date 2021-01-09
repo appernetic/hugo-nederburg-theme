@@ -1,11 +1,11 @@
 <div id="title-info" class="title-info">
   <div id='site-title' class='site-title'>
     {{ if ( ne .Site.Title "" ) }}
-    <a href="{{ .Site.BaseURL | relLangURL }}"> {{ .Site.Title }} </a>
+    <a href="{{ .Site.BaseURL | relLangURL }}" title="Link to home page"> {{ .Site.Title }} </a>
     {{ end }}</div>
   </div>
   <button id="toggle-navigation" class="toggle-navigation">
-    <i class="fa fa-bars"></i>
+    <i class="fas fa-bars"></i>
   </button>
 
   <div id="menu-primary-tracks" class="menu-primary-tracks"></div>
@@ -18,13 +18,13 @@
       <ul id="menu-primary-items" class="menu-primary-items">
         {{ $page := . }}
         {{ range .Site.Menus.main }}
-        <li id="menu-item" class='menu-item {{ if eq ("/") (.URL) }}menu-item-type-custom menu-item-object-custom{{ else }}menu-item-type-post_type menu-item-object-page{{ end }} {{ if $page.IsMenuCurrent "main" . }}current-menu-item current_page_item{{ end }}'>
-          <a href="{{ .URL | absURL }}">{{ .Name }}</a>
+        <li class='menu-item {{ if eq ("/") (.URL) }}menu-item-type-custom menu-item-object-custom{{ else }}menu-item-type-post_type menu-item-object-page{{ end }} {{ if $page.IsMenuCurrent "main" . }}current-menu-item current_page_item{{ end }}'>
+          <a href="{{ .URL | absURL }}" title="Link to page {{ .Name }}">{{ .Name }}</a>
           {{ if .HasChildren }}
           <ul class="sub-menu">
             {{ range .Children }}
-            <li id="menu-item" class='menu-item {{ if eq ("/") (.URL) }}menu-item-type-custom menu-item-object-custom{{ else }}menu-item-type-post_type menu-item-object-page{{ end }} {{ if $page.IsMenuCurrent "main" . }}current-menu-item current_page_item{{ end }}'>
-              <a href="{{ .URL | absURL }}">{{ .Name }}</a>
+            <li class='menu-item {{ if eq ("/") (.URL) }}menu-item-type-custom menu-item-object-custom{{ else }}menu-item-type-post_type menu-item-object-page{{ end }} {{ if $page.IsMenuCurrent "main" . }}current-menu-item current_page_item{{ end }}'>
+              <a href="{{ .URL | absURL }}" title="Link to page {{ .Name }}">{{ .Name }}</a>
             </li>
             {{ end }}
           </ul>

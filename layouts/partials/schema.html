@@ -1,27 +1,34 @@
 <script type="application/ld+json">
     {
         "@context" : "http://schema.org",
-        "@type" : "BlogPosting",
+        "@type" : "TechArticle",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "{{ .Site.BaseURL }}"
+             "@id": {{ .Site.BaseURL }}
         },
-        "articleSection" : "{{ .Section }}",
-        "name" : "{{ .Title }}",
-        "headline" : "{{ .Title }}",
-        "description" : "{{ if .Description }}{{ .Description }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ end }}{{ end }}",
+        "articleSection" : "{{if .Section}}{{ .Section }}{{else}}main{{end}}",
+        "name" : {{ .Title }},
+        "headline" : {{ .Title }},
+        "description" : {{ if .Description }}{{ .Description }}{{ else }}{{if .IsPage}}{{ .Summary }}{{else}}{{.Site.Params.description}}{{ end }}{{ end }},
         "inLanguage" : "en",
-        "author" : "{{ .Page.Params.author }}",
-        "creator" : "{{ .Page.Params.author }}",
-        "publisher": "{{ .Page.Params.author }}",
-        "accountablePerson" : "{{ .Page.Params.author }}",
-        "copyrightHolder" : "{{ .Page.Params.author }}",
+        "author" : "{{if .Page.Params.author}}{{ .Page.Params.author }}{{else}}{{.Site.Params.author}}{{end}}",
+        "creator" : "{{if .Page.Params.author}}{{ .Page.Params.author }}{{else}}{{.Site.Params.author}}{{end}}",
+        "publisher":{
+            "@type": "Organization",
+            "name": "{{if .Page.Params.author}}{{ .Page.Params.author }}{{else}}{{.Site.Params.author}}{{end}}",
+            "logo": {
+                "@type": "ImageObject",
+                "url": {{ .Site.Params.image }}
+            }
+        },
+        "accountablePerson" : "{{if .Page.Params.author}}{{ .Page.Params.author }}{{else}}{{.Site.Params.author}}{{end}}",
+        "copyrightHolder" : "{{if .Page.Params.author}}{{ .Page.Params.author }}{{else}}{{.Site.Params.author}}{{end}}",
         "copyrightYear" : "{{ .Date.Format "2006" }}",
-        "datePublished": "{{ .Date }}",
-        "dateModified" : "{{ .Date }}",
-        "url" : "{{ .Permalink }}",
+        "datePublished": {{ .Date }},
+        "dateModified" : {{ .Date }},
+        "url" : {{ .Permalink }},
         "wordCount" : "{{ .WordCount }}",
-        "image" : {{ printf "%s%s" .Site.BaseURL .Page.Params.image }}",
-        "keywords" : [ {{ if isset .Params "tags" }}{{ range .Params.tags }}"{{ . }}",{{ end }}{{ end }}"Blog" ]   
+        "image" : {{ if .Page.Params.Image }}{{.Page.Params.Image}}{{else}}{{ .Site.Params.image }}{{ end }},
+        "keywords" : [ {{ if isset .Params "tags" }}{{ range .Params.tags }}"{{ . }}",{{ end }}{{else}}{{ range .Site.Params.keywords }}"{{ . }}",{{ end }}{{ end }}"Blog" ]
     }
     </script>

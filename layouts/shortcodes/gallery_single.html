@@ -1,0 +1,5 @@
+{{ with .Page.Resources.GetMatch (.Get "img") }}
+    {{ $full := .Fit "1980x1080"}}
+    {{ $resized := .Fill "300x300 q80" }}
+    <a href="{{ $full.Permalink }}" data-lightbox="x"><img src="{{ $resized.Permalink }}"/></a>
+{{ end }}

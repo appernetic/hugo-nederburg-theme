@@ -1,0 +1,8 @@
+{{ $dir := print (.Get "dir") "/*"}}
+{{ with .Page.Resources.Match $dir }}
+{{ range . }}
+    {{ $full := .Fit "1980x1080"}}
+    {{ $resized := .Fill "135x120 q80" }}
+    <a href="{{ $full.Permalink }}" data-lightbox="x"><img src="{{ $resized.Permalink }}"/></a>
+    {{ end }}
+{{ end }}

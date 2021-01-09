@@ -1,3 +1,15 @@
 <script src="{{ "js/jquery.min.js" | absURL }}"></script>
 <script src="{{ "js/jquerymigrate.js" | absURL }}"></script>
-<script src="{{ "js/production.min.js" | absURL }}"></script>
+<script src="{{ "js/production.min.js" | absURL }}?v={{ now.Unix }}"></script>
+
+<script src="{{ "js/seoCheck.js" | absURL }}"></script>
+<script src="{{ "js/jqBootstrapValidation.min.js" | absURL }}"></script>
+{{ if .Page.Params.useGallery}}
+    <script src="{{ "js/lightbox.min.js" | absURL }}"></script>
+{{ end }}
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async rel="preconnect" src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.gtag }}"></script>
+<script>
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '{{ .Site.Params.gtag }}');
+</script>
