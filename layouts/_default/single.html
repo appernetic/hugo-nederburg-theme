@@ -9,8 +9,8 @@
 {{ if .Site.Params.writers }}
     {{ $index := $writerName }}
     {{ if .Params.writer }}
-        {{ $index := (lower .Params.writer) }}
-        {{ $writerName := .Params.writer}}
+        {{ $index = (lower .Params.writer) }}
+        {{ $writerName = .Params.writer}}
     {{ end }}
     {{ $scratch.Set "writer" (index .Site.Params.writers $index | default dict) }}
 {{ else }}

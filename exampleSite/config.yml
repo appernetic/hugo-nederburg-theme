@@ -50,7 +50,8 @@ params:
   #      instagram: "full profile url in instagram"
   #      github: "full profile url in github"
   #      pinterest: "full profile url in pinterest"
-
+    "Ololosh Ololoshev":
+      link: "/dev/null"
 module:
   mounts:
     - source: themes/hugo-nederburg-theme/assets
