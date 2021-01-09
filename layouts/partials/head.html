@@ -39,9 +39,9 @@
 {{ $customCss := resources.Get "css/custom.css" }}
 {{ $cssSlice := slice $baseCss $customCss }}
 {{ if .Page.Params.useGallery}}
-    <link rel="stylesheet async" as="style" href="{{(resources.Get "css/lightbox.min.css").Permalink }}">
+    <link rel="stylesheet async" as="style" href="{{ (resources.Get "css/lightbox.min.css").Permalink }}">
 {{ end }}
-{{ $style := slice $baseCss $customCss | resources.Concat "css/bundle.css" | resources.Minify| resources.Fingerprint }}
+{{ $style := slice $baseCss $customCss | resources.Concat "css/bundle.css" | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet async" href="{{ $style.Permalink }}">
 
 <link rel="preconnect" href="https://www.google-analytics.com">
