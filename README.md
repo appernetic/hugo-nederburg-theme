@@ -13,10 +13,10 @@ Go to the directory where you have your Hugo site and run:
 ```
 $ mkdir themes
 $ cd themes
-$ git clone https://github.com/appernetic/hugo-nederburg-theme.git
+$ git clone https://github.com/inver/hugo-nederburg-theme.git
 ```
 
-For more information read the official [setup guide](https://gohugo.io/overview/installing/) of Hugo or use [Appernetic](https://appernetic.io/).
+For more information read the official [setup guide](https://gohugo.io/overview/installing/) of Hugo or use [nevinsky.net](https://nevinsky.net/).
 
 ## Configuration
 
