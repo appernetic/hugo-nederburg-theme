@@ -7,8 +7,13 @@
     <title>
         {{ if $.IsHome}}
             {{ $.Site.Params.slogan | default "" | safeHTML }}
-        {{else}}
-            {{ $.Title }}
+        {{ else }}
+            {{ $sectionName := (index $.Site.Params.sections $.Section).Name }}
+            {{ if $sectionName }}
+                {{ $sectionName }}: {{ $.Title }}
+            {{ else }}
+                {{ $.Title }}
+            {{ end }}
         {{ end }}
         | {{ $.Site.Title }}
     </title>

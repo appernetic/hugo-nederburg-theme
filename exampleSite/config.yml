@@ -33,6 +33,12 @@ params:
     email: "alexey@nevinsky.net"
     rss: true
 
+  sections:
+    categories:
+      name: Category
+    tags:
+      name: Tags
+
   writers:
     "Alexey Nevinsky":
       link: "https://nevinsky.net/about"

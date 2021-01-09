@@ -1,6 +1,6 @@
 <div class="archive-header">
 	<h1>
-		Tag: {{ .Title }}
+		{{ (index .Site.Params.sections $.Section).Name }}: {{ .Title }}
 		{{ if .Site.Params.social.rss }}
 		<a href="{{ .RSSLink }}" data-animate-hover="pulse" class="in-page-rss" target="_blank">
             <i class="fas fa-rss" title="rss"></i>

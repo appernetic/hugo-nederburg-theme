@@ -5,6 +5,7 @@ draft = false
 image = "img/portfolio/logs1.jpg"
 showonlyimage = false
 categories = [ "Design"]
+tags = ["First tag"]
 weight = 1
 description = "Individual meta description for this post"
 +++
